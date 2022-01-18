@@ -7,7 +7,7 @@
 - This is my final project in Intro to Computing. Mainly written in HTML/CSS/JavaScript, this provides additional info through code documentation, or via this file.
 
 ### How do I clone your work?
-- There is a tutorial on how to clone my Github repository. You can redirect [here]().
+- There is a tutorial on how to clone my Github repository. You can redirect [here](https://github.com/raianah/cvsu-html/blob/main/project.html).
 
 ### Anything you like to say here?
 - This ONLY provides output of the said files. I do not discuss what the code does, as it is already stated in the html files. Do take a look at them.
