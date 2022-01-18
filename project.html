@@ -1,0 +1,424 @@
+<!--
+    MIT License
+
+    Copyright (c) 2022 raianah
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>CVSU IMUS CAMPUS - REVIEW BLOG (Main Page)</title>
+</head>
+<body>
+<style>
+    /* TAKE NOTE BEFORE CLONING IT:
+       This webpage was written in Microsoft Edge (Version 97).
+       It might look distorted in your selected browser. To manually change the webpage resolution,
+       change the value of height, margin, width to your current resolution, or change the value of background-size to your browser resolution. 
+       
+       Current System:
+          - Microsoft Edge (Version 97)
+          - 1290 x 658 browser resolution
+
+       To run this in your system clone it on GitHub, and/or download the following fonts, if not provided by the clone itself:
+          - Glacial Indifference (Bold and Regular) [ Free for Commercial Use ]
+          - Quicksand (Regular) [ Free for Commercial Use ]
+          - DM Serif Display (Regular) [ Free for Personal Use ]
+       (Normally those fonts are automatically downloaded when cloned to GitHub)
+       
+       To clone this on your system do this:
+          - Download Git from here: https://git-scm.com/downloads (If you don't have one)
+          - Follow the process from there. Here is guide if you are stuck: https://phoenixnap.com/kb/how-to-install-git-windows
+          - Commit `git clone <github link>`, copy the link on where you first found this repository. It should be in this following format: https://github.com/raianah/my_repository
+          - Open the two files named project1.html, and project2.html separately.
+          - In the URL query copy the given link and paste it on the following:
+             - project1.html belongs to the <div class="firstimage"> and <div class="headline"> under href method.
+             - project2.html belongs to the <div class="secondimage"> and <div class="headline-2> under href method
+             - Don't forget to save those changes and open project.html (main file).
+             - Everything should work from there. If not, kindly open an issue and directly point to the problem. */
+
+    /* Welcome to my ~~Yandere Source Code~~ Basic HTML. This is for direct documentation only. Kindly use README.md file if you're not familiar with this. 
+    
+    HTML - This is to customize the Overall height & width representation, and designation of scroll to make the web page scrollable.
+         - The background color is set to newspaper color theme. This is to make everything the same as the given background color which is in the same color.
+           When you scroll down it should appear as long image.
+         - overflow-x is for making the webpage scrollable horizontally. Since we don't need this, it is set to hidden.
+         - overflow-y is for making the webpage scrollable vertically. Since we are not using the classy <p>, we need to customize this to make it scrollable.
+            
+    Unlike Python, every HTML line should end in semi-colon. If the ending is a curly bracket no need to put semi-colon. */
+    html {
+        height: auto;
+        margin: auto;
+        width: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: #F6F1E9;
+    }
+
+
+    /* BODY - This is to set the background and everything about background.
+            - background-size is to resize the following image (the original image is set to 1366 x 768, which appears big in the browser.
+            - background-repeat is to tell the webpage that if it reaches the bottomline of the image, it will produce another set of image causing it to repeat.
+            - position is to tell the image if how does the image behave.
+                - static value is just...there. Anything you changed does not affect the background.
+                - relative value is according to the normal flow of the document. This is useful for not creating a mess when relocating the said image to x & y values.
+                - absolute value can overlap current elements existed. AKA overlapping.
+                - fixed value does stay on your screen, even if you scroll down or up. */
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/858505566429904896/932564721343811634/Home.png");
+        background-size: 1290px 658px;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+
+    /* @font-face declares custom fonts that aren't installed in your server. As long as you have these files it is usable.
+                  do take note that if you put these files in a folder. You also need to change the directory. You can use ./folder_name/font_name.otf
+        - font-family: this is to declare the name of your custom font. It can be anything you like.
+        - src: the source of the font. If you are using local, instead of url(), use local() */
+    @font-face {
+        font-family: 'glacial-indifference-bold';
+        src: url("GlacialIndifference-Bold.otf");
+    }
+    @font-face {
+        font-family: 'glacial-indifference-regular';
+        src: url("GlacialIndifference-Regular.otf");
+    }
+    @font-face {
+        font-family: 'quicksand';
+        src: url("Quicksand_Book.otf");
+    }
+
+
+    /* element class types - this is one way to declare a variable. In this instances you can use these classes later on when you are inputting a value.
+       since these class types wields different attributes, I'll generalized them here.
+       
+       font-family - the name of the font. If you are setting up a custom font, use the value of the font-family in your @font-face
+       font-size - declare the size of your font. Declare it by pixels for better accuracy.
+       left, top, right - The position of your font. It is important somehow if you want to put your text elsewhere aside from left-center-right value.
+       cursor - This is to verify if how would your mouse pointer reacts to a text/image when hovered.
+       position - This is to tell if how would your text/image behave.
+       
+       If you want to globalize your class type, simple do * {values here} */
+    .discover1 {
+        font-family: 'glacial-indifference-bold';
+        font-size: 16px;
+        position: relative;
+        left: 47px;
+        top: 173px;
+        cursor: pointer;
+    }
+    .discover1date {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 48px;
+        top: 157px;
+    }
+    .discover2 {
+        font-family: 'glacial-indifference-bold';
+        font-size: 17px;
+        position: relative;
+        left: 47px;
+        top: 163px;
+        cursor: pointer;
+    }
+    .discover2date {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 48px;
+        top: 148px;
+    }
+    .discover3 {
+        font-family: 'glacial-indifference-bold';
+        font-size: 16px;
+        position: relative;
+        left: 47px;
+        top: 150px;
+        cursor: pointer;
+    }
+    .discover3date {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 48px;
+        top: 135px;
+    }
+    .discover4 {
+        font-family: 'glacial-indifference-bold';
+        font-size: 16px;
+        position: relative;
+        left: 47px;
+        top: 140px;
+        cursor: pointer;
+    }
+    .discover4date {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 48px;
+        top: 123px;
+    }
+    .ourgoal {
+        font-family: 'glacial-indifference-bold';
+        font-size: 18px;
+        text-align: center;
+        position: relative;
+        left: 500px;
+        top: -300px;
+    }
+    .ourcontent {
+        font-family: 'glacial-indifference-regular';
+        font-size: 15px;
+        text-align: center;
+        position: relative;
+        left: 500px;
+        top: -300px;
+    }
+    .firstimage {
+        padding: 0px;
+    }
+    .my-image { 
+        position: relative;
+        left: 334px;
+        top: -683px;
+        transition: .5s ease;
+    }
+    .firstimage:hover .my-image {
+        opacity: 0.3;
+    }
+    .headline {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        text-align: center;
+        position: relative;
+        color: #F6F1E9;
+        left: -3px;
+        top: -840px;
+    }
+    .secondimage {
+        padding: 0px;
+    }
+    .second-image {
+        position: relative;
+        left: 334px;
+        top: -810px;
+        transition: .5s ease;
+    }
+    .secondimage:hover .second-image {
+        opacity: 0.3;
+    }
+    .headline-2 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        text-align: center;
+        position: relative;
+        color: #F6F1E9;
+        left: -3px;
+        top: -965px;
+    }
+
+    /* not-so-special classes for the footer section */
+    .contributor {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 9px;
+        top: -70px;
+        color: black;
+    }
+    .creator {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 9px;
+        top: -10px;
+        color: black;
+    }
+    .github {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 600px;
+        top: -49px;
+        color: black;
+    }
+    .github-image { 
+        position: relative;
+        left: 578px;
+        top: -42px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+
+    /* This is a hard-coded rectangle. It does not produce in a design software. It is generated through code.
+
+    width, height - Declare how big will be your rectangle
+    opacity - Declare the transparency of your rectangle. 100% is fully transparent.
+    background - pretty self explanatory
+    transition - This is for mouse hovering. How will be the rectangle react if it was hovered.
+    backface-visibility - This is for animation purposes. Since we are not animating a rectangle it will stay static using the hidden value.
+    
+    Q: Why there is # or . in every class?
+    A: # (hashtag) represents id selector while . (dot) represents class. */
+    #rectangle {
+        width: 599px;
+        height: 71px;
+        opacity: 67%;
+        background: black;
+        position: relative;
+        left: 335px;
+        top: -758px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+    #second-rectangle {
+        width: 600px;
+        height: 71px;
+        opacity: 67%;
+        background: black;
+        position: relative;
+        left: 335px;
+        top: -885px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+/* style element allows developers to embed style information in the documents. in short the style element can make the developers customize their website in the way
+   they want to */ 
+</style>
+
+<!--
+    the div element can be used to handle classes.
+    # (hashtag) can be used by simply doing <div id="your class name here"></div>
+    . (dot) can be used by simply doing <div class="your class name here"></div>
+
+    different inputs inside div element:
+       - h1-h6: header type. I don't use paragraphs simply to enlarge texts. Using <p> is unnecessary in this webpage since everything is header.
+       - anchor: anchor element can be used for several reasons:
+           - adding css styling to a text/image.
+              - text-decoration refers to additional decorations to a font. This is useful if you don't want underlined text in an hyperlinked text.
+              - color sets to a text on how will it be. This overlaps the given color in your class. This is useful if you don't want to make your text reacts to href.
+           - adding hyperlinks to a text/image.
+              - specifying how would the hyperlink behave when clicked
+                 - _self value reloads the current browser to the link provided in the href value.
+                 - _blank value opens another tab to the link provided.
+                 - _parent value opens to the parent browsing. If not provided, it acts just like _self.
+                 - _top opens to the top-level browsing context. If not provided, it acts just like _self.
+-->
+
+<div class="discover1">
+    <h2><a style="text-decoration: none; color: inherit;", href="https://newsinfo.inquirer.net/1532717/a-year-in-crisis-a-review-of-2021s-biggest-events", target="_blank">A Year of Crisis: 2021 <br> Review •</a></h2>
+</div>
+
+<div class="discover1date">
+    <h3>Dec. 30, 2021</h3>
+</div>
+
+<div class="discover2">
+    <h2><a style="text-decoration: none; color: inherit;", href="https://www.nme.com/en_asia/features/music-features/nme-best-kpop-songs-of-the-year-2021-3122558", target="_blank">Top 25 Best K-pop <br> songs of 2021 •</a></h2>
+</div>
+
+<div class="discover2date">
+    <h3>Dec. 20, 2021</h3>
+</div>
+    
+<div class="discover3">
+    <h2><a style="text-decoration: none; color: inherit;", href="https://wanderingwheatleys.com/best-food-to-eat-in-the-philippines/", target="_blank">Top 15 Must-Try Foods <br> in the Philippines •</a></h2>
+</div>
+
+<div class="discover3date">
+    <h3>Dec. 10, 2021</h3>
+</div>
+
+<div class="discover4">
+    <h2><a style="text-decoration: none; color: inherit;", href="https://handluggageonly.co.uk/2018/12/26/12-best-places-in-the-philippines-to-visit/", target="_blank">Top 15 Places to go in <br> the Philippines •</a></h2>
+</div>
+
+<div class="discover4date">
+    <h3>Nov. 24, 2021</h3>
+</div>
+
+<div class="ourgoal">
+    <h3>Our Goal:</h3>
+</div>
+
+<div class="ourcontent">
+    <h3>RC's Review Blog provides <br> top-quality reviews on every <br> product we personally have. <br><br> All reviews are subjected <br>
+    to our personal experience <br> and do not reflect on the <br> company's profile and dignity. <br><br> Negative remarks are based <br>
+    on our personal experience <br> and may vary to other users.</h3>
+</div>
+
+<div class="firstimage">
+    <a href="file:///C:/Users/guada/Desktop/%E2%A0%80/project1.html#", target="_blank"><img class="my-image" src="https://cdn.discordapp.com/attachments/858505566429904896/920327223175700490/snowman-g9cfe37b35_1280.jpg" alt="Dog with Snowman" style="width:601px;height:362px;"></a>
+</div>
+
+<div id="rectangle"></div>
+
+<div class="headline">
+    <h3><a style="text-decoration: none; color: inherit;", href="file:///C:/Users/guada/Desktop/%E2%A0%80/project1.html#", target="_blank">Reasons why Christmas is never the same as 2012 <br> (4-min read)</a></h3>
+</div>
+
+<div class="secondimage">
+    <a href="file:///C:/Users/guada/Desktop/%E2%A0%80/project2.html#", target="_blank"><img class="second-image" src="https://cdn.discordapp.com/attachments/858505566429904896/932845275117146122/patch4.0.jpg" alt="Valorant Patch Notes 4.0" style="width:601px;height:362px;"></a>
+</div>
+
+<div id="second-rectangle"></div>
+
+<div class="headline-2">
+    <h3><a style="text-decoration: none; color: inherit;", href="file:///C:/Users/guada/Desktop/%E2%A0%80/project2.html#", target="_blank">Ares, Without a Doubt the Strongest Weapon in Valorant: EP 4 <br> (2-min read)</a></h3>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!--
+    hr element refers to a visual line break. It can be stylized by the following values:
+       - width, height - how long and how tall will be your line
+       - border-width - how thick will be your line
+       - color & background-color - what color would you like with your line 
+-->
+<hr style="width:100%;height:1px;border-width:4;color:black;background-color:black;">
+
+
+<!--
+    &emsp; represents tab in unicode. This is actually to fake a text instead of creating another class just to put Github Source Code.
+
+    You can also combine text and image, if you still don't know. You can define a class inside <img> element to prevent using the current class given by the <div>.
+-->
+<div class="creator">
+    <h5>Created with ♥ by Gella, Rodnie G. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Github Source Code</h5>
+    <img class="github-image" src="https://cdn.discordapp.com/attachments/858505566429904896/932831781466562672/github-logo.png" style="width:20px;height:20px;">
+</div>
+
+<div class="contributor">
+    <h5>Contributor: Czarjohn Villareal</h5>
+</div>
+
+<!--
+    Documented by: [ redacted for privacy purpose ] ~ Raianah (also called Aly, or Arin)
+-->
+
+</body>
+</html>
+<!-- 400th line -->

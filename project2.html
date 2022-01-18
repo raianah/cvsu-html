@@ -1,0 +1,393 @@
+<!--
+    MIT License
+
+    Copyright (c) 2022 raianah
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ares, Without a Doubt the Strongest Weapon in VALORANT - CVSU IMUS CAMPUS - REVIEW BLOG</title>
+</head>
+<body>
+
+<!--
+    Heyo! If you are looking for the documentation on how this work. You can find them at project1.html. Basically it is just the same as this. Just different context,
+    and it contains more images!
+-->
+
+<style>
+    html {
+        height: 100%;
+        margin: auto;
+        width: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: #F6F1E9;
+    }
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/858505566429904896/932849713756131408/actual_3rd_html.png");
+        background-size: 1319px 658px;
+        background-repeat: no-repeat;
+    }
+    @font-face {
+        font-family: 'dm-serif';
+        src: url("DMSerifDisplay-Regular.ttf");
+    }
+    @font-face {
+        font-family: 'glacial-indifference-regular';
+        src: url("GlacialIndifference-Regular.otf");
+    }
+
+    .capital {
+        font-family: 'dm-serif';
+        font-size: 30px;
+        position: relative;
+        left: 310px;
+        top: 565px;
+    }
+    .content {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 338px;
+        top: 491px;
+        letter-spacing: 1px;
+    }
+    #rectangle {
+        width: 130px;
+        height: 60px;
+        opacity: 67%;
+        background: black;
+        position: relative;
+        left: 600px;
+        top: 210px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+    #rectangle:hover {
+        opacity: 1.2;
+    }
+    /* TEXTS FOR CONTENT */
+    .text1 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 13px;
+        position: relative;
+        left: 619px;
+        top: 157px;
+        letter-spacing: 1.5px;
+        color: #F6F1E9;
+    }
+    .subtext {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 336px;
+        top: 310px;
+        letter-spacing: 1.8px;
+        color: black;
+    }
+    .content2 {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 338px;
+        top: 301px;
+        letter-spacing: 1px;
+    }
+    .subtext2 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 336px;
+        top: 290px;
+        letter-spacing: 1.8px;
+        color: black;
+    }
+    .content3 {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 338px;
+        top: 281px;
+        letter-spacing: 1px;
+    }
+    .subtext3 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 398px;
+        top: 268px;
+        letter-spacing: 1.8px;
+        color: black;
+    }
+    .content4 {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 338px;
+        top: 261px;
+        letter-spacing: 1px;
+    }
+    .subtext4 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 435px;
+        top: 244px;
+        letter-spacing: 1.8px;
+        color: black;
+    }
+    .content5 {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 338px;
+        top: 235px;
+        letter-spacing: 1px;
+    }
+    .subtext5 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 11px;
+        position: relative;
+        left: 435px;
+        top: 221px;
+        letter-spacing: 1.8px;
+        color: black;
+    }
+    .content6 {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 338px;
+        top: 208px;
+        letter-spacing: 1px;
+    }
+    /* SCROLL BAR INDICATOR */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: black;
+    }
+    .progress {
+        width: 100%;
+        height: 8px;
+        background-color: #F6F1E9;
+    }
+    .bar {
+        height: 8px;
+        background-color: black;
+        width: 0%;
+    }
+    .bar-content {
+        padding: 100px;
+        width: 0%;
+    }
+    .creator {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 9px;
+        top: -10px;
+        color: black;
+    }
+    .github {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 600px;
+        top: -49px;
+        color: black;
+    }
+    /* IMAGES USED IN THIS ARTICLE */
+    .my-image { 
+        position: relative;
+        left: 578px;
+        top: -42px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .image1 {
+        position: relative;
+        left: 336px;
+        top: 312px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .image2 {
+        position: relative;
+        left: 336px;
+        top: 300px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .image3 {
+        position: relative;
+        left: 397px;
+        top: 275px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .image4 {
+        position: relative;
+        left: 434px;
+        top: 255px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .image5 {
+        position: relative;
+        left: 434px;
+        top: 230px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .contributor {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 9px;
+        top: -70px;
+        color: black;
+    }
+</style>
+
+<div class="capital">
+    <h2>V</h2>
+</div>
+
+<div class="header">
+    <div class="progress">
+        <div class="bar" id="pbar"></div>
+    </div>
+</div>
+
+<div class="content">
+    <h2>alorant is a free-to-play first person shooter developed and published <br> by Riot Games. Although the core gameplay is free, it's
+        cosmetics and <br> battlepass (battlepass are type of premium content wherein the player <br> can receive additional rewards on
+        a tiered system) is purchasable via <br> real-money.<br><br> Currently Valorant is in EPISODE 4: ACT 1 (a event-wide system that <br> lasts
+        for months), featuring all new cosmetics and Neon, a <br> Filipino-based new agent with speedy skills. This current <br> episode also
+        features the current buffs and nerfs, which changes <br> the tide of the game based on <br> their damage. It was released on January 11,
+        2022.</h2>
+</div>
+
+<img class="image1" src="https://cdn.discordapp.com/attachments/858505566429904896/932845275117146122/patch4.0.jpg" alt="Valorant's Patch Notes" style="width:650px;height:420px;">
+
+<div class="subtext">
+    <h4>COURTESY: VALORANT</h4>
+</div>
+
+<div class="content2">
+    <h2>Ares, is one of the two machine guns in VALORANT, the other being <br> Odin. In the recent update, Ares had the most visible changes. It got <br>
+    buffed, from 10 rounds per second to 13 rounds per second.</h2>
+</div>
+
+<img class="image2" src="https://cdn.discordapp.com/attachments/858505566429904896/932864562137555014/ares.jpg" alt="Ares, a Machine Gun from VALORANT" style="width:650px;height:400px;">
+
+<div class="subtext2">
+    <h4>COURTESY: VALORANT</h4>
+</div>
+
+<div class="content3">
+    <h2>It boasts a high-penetration, capable of wall-bangs, and is very cheap. <br> It is possible to buy every gun round after a pistol round.</h2>
+</div>
+
+<img class="image3" src="https://cdn.discordapp.com/attachments/858505566429904896/932867733614387220/general.png" alt="General Type Machine Gun">
+
+<div class="subtext3">
+    <h4>COURTESY: VALORANT</h4>
+</div>
+
+<div class="content4">
+    <h2>It also has a very decent damage, capable of killing an enemy as fast <br> as 0.16 seconds.</h2>
+</div>
+
+<img class="image4" src="https://cdn.discordapp.com/attachments/858505566429904896/932883325817880576/dmg.png" alt="Gun Damage">
+
+<div class="subtext4">
+    <h4>COURTESY: VALORANT</h4>
+</div>
+
+<div class="content5">
+    <h2>During the Aim Down Sight (ADS), it is really <i>broken</i>. There may be a <br> Movement Speed Penalty but the fire rate doesn't drop and there's <br>
+    a slight reduction in the recoil and spread; bullets won't fly around <br> too much.</h2>
+</div>
+
+<img class="image5" src="https://cdn.discordapp.com/attachments/858505566429904896/932887131712528394/ads.png" alt="Aim Down Sight Info">
+
+<div class="subtext5">
+    <h4>COURTESY: VALORANT</h4>
+</div>
+
+<div class="content6">
+    <h2>Currently Valorant is in EPISODE 4: ACT 1 (a event-wide system that lasts <br>
+        for months), featuring all new cosmetics and Neon, a Filipino-based <br> new agent with speedy skills. This current episode also
+        features the <br> current buffs and nerfs, which changes the tide of the game based on <br> their damage. It was released on January 11,
+        2022. <br> <br> If the said gun was found to be super broken by both professional and <br> casual gameplay, Riot Games should tune it more
+        to be fair, or buff <br> everything to the point that everything is now broken. Who knows?</h2>
+</div>
+
+<script>
+    window.onscroll = function() {progress_func()};
+
+    function progress_func() {
+        var progress_scroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var prog_scrolled = (progress_scroll / height) * 100;
+        document.getElementById("pbar").style.width = prog_scrolled + "%";
+    }
+</script>
+
+<a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">
+    <div id="rectangle"></div>
+</a>
+
+<div class="text1">
+    <a style="text-decoration: none; color: inherit;" href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">
+        <h3>Back to Top</h3>
+    </a>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+<hr style="width:100%;height:1px;border-width:4;color:black;background-color:black;">
+
+
+<div class="creator">
+    <h5>Created with ♥ by Gella, Rodnie G. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Github Source Code</h5>
+    <img class="my-image" src="https://cdn.discordapp.com/attachments/858505566429904896/932831781466562672/github-logo.png" style="width:20px;height:20px;">
+</div>
+
+<div class="contributor">
+    <h5>Contributor: Czarjohn Villareal</h5>
+</div>
+
+</body>
+</html>

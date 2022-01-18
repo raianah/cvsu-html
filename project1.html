@@ -1,0 +1,269 @@
+<!--
+    MIT License
+
+    Copyright (c) 2022 raianah
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reasons why Christmas is never the same as 2012 - CVSU IMUS CAMPUS - REVIEW BLOG</title>
+</head>
+<body>
+
+<style>
+    /* As a reference to what these does, please refer to the project.html documentation code
+       I will only explain the progress bar showed when scrolling down the webpage, as well as the button that returns to the topmost page.
+       Other explanation are provided in the main file. Go there. */
+    html {
+        height: 100%;
+        margin: auto;
+        width: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: #F6F1E9;
+    }
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/858505566429904896/932640361459875880/actual_2nd_html.png");
+        background-size: 1319px 658px;
+        background-repeat: no-repeat;
+    }
+    @font-face {
+        font-family: 'dm-serif';
+        src: url("DMSerifDisplay-Regular.ttf");
+    }
+    @font-face {
+        font-family: 'glacial-indifference-regular';
+        src: url("GlacialIndifference-Regular.otf");
+    }
+
+    .capital {
+        font-family: 'dm-serif';
+        font-size: 30px;
+        position: relative;
+        left: 357px;
+        top: 565px;
+    }
+    .content {
+        font-family: 'dm-serif';
+        font-size: 13px;
+        position: relative;
+        left: 388px;
+        top: 491px;
+        letter-spacing: 1px;
+    }
+    #rectangle {
+        width: 130px;
+        height: 60px;
+        opacity: 67%;
+        background: black;
+        position: relative;
+        left: 600px;
+        top: 330px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+    #rectangle:hover {
+        opacity: 1.2;
+    }
+    .text1 {
+        font-family: 'glacial-indifference-regular';
+        font-size: 13px;
+        position: relative;
+        left: 619px;
+        top: 277px;
+        letter-spacing: 1.5px;
+        color: #F6F1E9;
+    }
+
+    /* Progress bar are indeed a complex type of code, but it's worth it to discuss and implement especially if your website focuses on blogs or articles.
+       A tiny little progress bar makes your website look nice, and also provides additional information on the user side's reading progress.
+       
+       .header class - Where should the progress bar be. Fixed position will make the progress bar stay in your screen even scrolled down.
+            z-index sets the z-order of a positioned element and its descendants or flex items. AKA overlapping current image elements.
+       .progress class - We just define the width, height, and the background color of the said bar.
+       .bar class - We define the content (liquid) of the progress bar. How should it look when filled up.
+       .bar-content class - The starting point of the progress bar. padding value makes the output fair and square. If left is provided, same goes to right. If up is provided,
+            same goes as down. */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: black;
+    }
+    .progress {
+        width: 100%;
+        height: 8px;
+        background-color: #F6F1E9;
+    }
+    .bar {
+        height: 8px;
+        background-color: black;
+        width: 0%;
+    }
+    .bar-content {
+        padding: 100px;
+        width: 0%;
+    }
+    
+    /* Showing some love and appreciation by putting these names on the footer section. */
+    .creator {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 9px;
+        top: -10px;
+        color: black;
+    }
+    .github {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 600px;
+        top: -49px;
+        color: black;
+    }
+    .my-image { 
+        position: relative;
+        left: 578px;
+        top: -42px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        display: block;
+    }
+    .contributor {
+        font-family: 'glacial-indifference-regular';
+        font-size: 17px;
+        position: relative;
+        left: 9px;
+        top: -70px;
+        color: black;
+    }
+</style>
+
+<div class="capital">
+    <h2>C</h2>
+</div>
+
+<!--
+    Now we stack these classes. starting with the header part
+    We just defined the id value as "pbar". This will be used in the next part.
+    After that it follows the actual content!
+-->
+<div class="header">
+    <div class="progress">
+        <div class="bar" id="pbar"></div>
+    </div>
+</div>
+<div class="content">
+    <h2>hristmas according to Wikipedia, is an annual festival <br> commemorating the birth of Jesus Christ that is observed <br>
+        primarily on December 25 as a religious and cultural <br> celebration among billions of people around the world. <br>
+        <br> Christmas can be also a season of thanksgiving (for those <br> who don't have thanksgiving day) and family
+        bondings, <br> creating happy memories with the family during winter.<br><br>
+        As time goes by, with the booming of gadgets and <br> technology in general, Christmas seems to have lost<br> its true meaning.
+        And all we have is Christmas without<br>your loved ones, especially during this pandemic.<br><br>
+        Christmas in the early 2000s has been a great memories for <br> us, when we are kids. But as time goes by, the season of<br>
+        Christmas seems to fade away. And with that here are the <br> 5 reasons why Christmas will never be the same as 2012.<br><br>
+        1) Responsibilities: As we grow up, our responsibility is <br> increasing. And probably as a functional working adult, <br>
+        you rather have to take a rest than spending time with your <br> loved ones.<br><br> When we are kids (or toddlers), we don't
+        think of electricity<br>/water/house bills, and all we have to do is to be play and <br> especially, be happy. Well as an adult,
+        we don't do that here.<br><br>2) Being Busy: Having a lot of responsibility is there, and it <br> requires work. And with work, comes
+        exhaustion. If we are <br> exhausted, we tend to rest all day, instead of going out and do <br> something. Trust me, you can't even play games
+        and you might <br> want to spend your free time sleeping, or exercising.<br><br>3) Rise of Technology: Lastly, this factor affects people of
+        all <br> ages. With technology lying around, people tend to just surf <br> on the internet all day instead of physically communicating <br>
+        with someone somewhere. <br><br> Children are heavily affected by the technology, because <br> instead of playing with the people around them,
+        they just play <br> with their gadgets all day. It does affect both physically and <br> mentally as they venture in the world of internet.<br><br>
+        But no matter the reason, Christmas wasn't made yesterday. <br> The spirit of Christmas will live forever even the people will <br> change.<br><br>
+        <br><br><br><br><br></h2>
+</div>
+
+<!--
+    All of these progress bar classes, will go down on this one. This is the reason why it is called progress bar.
+    This is written in JavaScript, my most hated language.
+
+    using module window, we are using the window property "onscroll" for later purposes.
+    we declare a function(), and we add a new function name
+
+    <script> element is useful for adding dynamic texts and sprinkle of JavaScript in their HTML code.
+
+    we use again the function with the function name followed by curly brackets.
+    and we define the variables (var)
+        var progress_scroll = we are checking if it is scrolled by a <body> element or by <html> element.
+                          || represents "LOGICAL OR", the same in Python as simply "or"
+                          (eg comparison:
+                            JavaScript: if a || b:
+                            Python: if a or b:)
+        var height = we are subtracting the entire height value of the class "content" without padding given above by the height value with padding
+        var prog_scrolled = we are dividing the value of progress_scroll and height, then multiplied by 100
+        then we get the element by id "pbar" provided above, and we customize the width by the value of prog_scrolled in percentage
+-->
+<script>
+    window.onscroll = function() {progress_func()};
+
+    function progress_func() {
+        var progress_scroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var prog_scrolled = (progress_scroll / height) * 100;
+        document.getElementById("pbar").style.width = prog_scrolled + "%";
+    }
+</script>
+
+<!--
+    When you pressed "Back on Top", it automatically makes your webpage to go to the topmost part. This code is responsible for it.
+
+    Given the #rectangle in the class section, we just made a minimal-looking fancy button instead of the built-in button.
+    onclick - The reaction of the rectangle when clicked.
+        using the module document, we define our topmost part of the webpage.
+        scrollTop gives you live statistics of number of pixels while scrolling. At this point we gave it a value 0, so it is now immutable.
+            (immutable means cannot be changed)
+        since document.body represents <body> element while documentElement.scrollTop represents <html> element, we are making sure that all of them returns to it's value
+        to prevent unnecessary errors
+
+    These onclick values can be used in <img> element, and texts.
+-->
+<a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;">
+    <div id="rectangle"></div>
+</a>
+
+<div class="text1">
+    <a style="text-decoration: none; color: inherit;" href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;">
+        <h3>Back to Top</h3>
+    </a>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="width:100%;height:1px;border-width:4;color:black;background-color:black;">
+
+
+<div class="creator">
+    <h5>Created with ♥ by Gella, Rodnie G. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Github Source Code</h5>
+    <img class="my-image" src="https://cdn.discordapp.com/attachments/858505566429904896/932831781466562672/github-logo.png" style="width:20px;height:20px;">
+</div>
+
+<div class="contributor">
+    <h5>Contributor: Czarjohn Villareal</h5>
+</div>
+
+</body>
+</html>
